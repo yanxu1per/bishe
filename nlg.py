@@ -5,17 +5,19 @@ import codecs,chardet
 import pdb
 import re
 from random import choice,shuffle
+from config import config
+conf=config()
+#pdb.set_trace()
+de0=conf.de0
+de1=conf.de1
+de2=conf.de2
+de3=conf.de3
 
-de0=['说起 这款车']
-de1=['还算','只能说','勉强谈得上','偏','略显']
-de2=['的确','比较','给人一种 的感觉','让我觉得','有一股 的感觉','','有些','感觉']
-de3=['非常','很','特别','真是','超级','给人非常 的感觉','过于','太过']
-
-d1=set(['偏','略显','比较','给人一种 的感觉','让我觉得','有一股 的感觉','','有些','感觉','很','特别','真是','只能说'])
-d2=set(['勉强谈得上','的确','比较','给人一种 的感觉','让我觉得','有一股 的感觉','','有些','感觉','非常','很','特别','真是','超级','给人非常 的感觉'])
-d3=set(['非常','很','特别','真是','超级','给人非常 的感觉','过于','太过','给人一种 的感觉','让我觉得','','有些','感觉','勉强谈得上','的确','比较'])
-de4=['方面']
-blank=['其他的呢','再有呢','和我之前那一辆车比起来','还算不错 毕竟咱也不是专业车手','个人觉得还算满意','买了之后没有什么太大的遗憾','还是家人觉得好就好','我也不奢求太多']
+d1=conf.d1
+d2=conf.d2
+d3=conf.d3
+de4=conf.de4
+blank=conf.blank
 
 def formsen(att,d,adj):
 	
@@ -64,7 +66,6 @@ if length%3==2:
 	length+=2
 f=codecs.open('dataset2','r','utf-8')
 f2=codecs.open('att7','r','utf-8')
-fo=open('result','w')
 
 mol={}
 lines=f.readlines()
