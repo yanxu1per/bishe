@@ -98,16 +98,11 @@ for fangmian in mol.keys():
 			co=code[count:count+3]
 			count+=3
 			sen=encode(co,fangmian,att)
-			print sen
 			text+=sen+' '
 		else:
 			bit=[0,1]
 			co=str(choice(bit))+str(choice(bit))+str(choice(bit))
-			try:
-				sen=encode(co,fangmian,att)
-			except:
-				pdb.set_trace()
-			print sen
+			sen=encode(co,fangmian,att)
 			text+=sen+' '
 
 print text
