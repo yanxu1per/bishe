@@ -51,10 +51,7 @@ for fangmian in mol.keys():
 		if eos==0:
 			co=code[count:count+3]
 			count+=3
-			
 			sen=encode(co,fangmian,att)
-			
-			
 			text+=sen+' '
 		else:
 			bit=[0,1]
@@ -69,10 +66,7 @@ for sen in sens:
 	h=decode(sen)
 	if h=='eos':
 		break
-	try:
-		result+=h
-	except:
-		pdb.set_trace()
+	result+=h
 print result
 
 
